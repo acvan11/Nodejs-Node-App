@@ -1,0 +1,23 @@
+{
+  "name": "1.-node-exploring",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acvan11/Nodejs-Node-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/acvan11/Nodejs-Node-App/issues"
+  },
+  "homepage": "https://github.com/acvan11/Nodejs-Node-App#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "validator": "^10.11.0"
+  }
+}
