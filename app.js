@@ -1,5 +1,8 @@
 const chalk = require('chalk')
 
-console.log(chalk.blue('Success'))
-console.log(chalk.green.inverse.bold('Andy'))
-console.log(chalk.blue('Hello') + ' World' + chalk.red.bold.inverse('Ok'))
+const command = process.argv[2]
+if (command === 'add'){
+console.log(command)}
+else{
+	console.log('remove')
+}
