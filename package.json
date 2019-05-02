@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/acvan11/Nodejs-Node-App#readme",
   "dependencies": {
+    "args": "^5.0.1",
     "chalk": "^2.4.2",
-    "validator": "^10.11.0"
+    "validator": "^10.11.0",
+    "yargs": "^13.2.2"
   }
 }
