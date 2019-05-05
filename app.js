@@ -21,28 +21,21 @@ yargs.command({
 			type: "string"
 		}
 	},
-
-	handler: function(argv) {
-		notes.addNote(argv.title, argv.body);
-	}
+	handler: argv => notes.addNote(argv.title, argv.body)
 });
 
 // Create remove command
 yargs.command({
 	command: "remove",
 	describe: "Remove a note",
-	handler: function(argv) {
-		notes.removeNote(argv.title)
-	}
+	handler: argv => notes.removeNote(argv.title)
 });
 
 // List all the notes
 yargs.command({
 	command: "list",
 	describe: "List all notes",
-	handler: function() {
-		console.log("Listing all the notes! ^^");
-	}
+	handler: () => notes.listing()
 });
 
 // Read the note
