@@ -20,6 +20,25 @@ const addNote = (title, body) => {
 	}
 };
 
+const removeNote = (title) => {
+	const notes = loadNotes();
+	var count = 0
+	console.log(notes)
+	notes.forEach((note, index) => {
+		if (note.title === title){
+			notes.splice(index,1)
+			count++
+		}
+	})
+	if (count === 0){
+		console.log('There is no such note')
+	}else{
+		saveNotes(notes)
+		console.log('The note is removed!')
+		console.log(notes)
+	}
+}
+
 const saveNotes = notes => {
 	const dataJSON = JSON.stringify(notes);
 	fs.writeFileSync("notes.json", dataJSON);
@@ -37,5 +56,6 @@ const loadNotes = () => {
 
 module.exports = {
 	getNotes: getNotes,
-	addNote: addNote
+	addNote: addNote,
+	removeNote: removeNote
 };
