@@ -28,7 +28,7 @@ yargs.command({
 yargs.command({
 	command: "remove",
 	describe: "Remove a note",
-	handler: argv => notes.removeNote(argv.title)
+	handler: argv => notes.removeNote1(argv.title)
 });
 
 // List all the notes

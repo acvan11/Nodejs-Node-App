@@ -1,4 +1,5 @@
-const fs = require("fs");
+const fs = require("fs")
+const chalk = require("chalk")
 
 const getNotes = () => {
 	return "Okay!";
@@ -21,21 +22,15 @@ const addNote = (title, body) => {
 };
 
 const removeNote = (title) => {
-	const notes = loadNotes();
-	var count = 0
-	console.log(notes)
-	notes.forEach((note, index) => {
-		if (note.title === title){
-			notes.splice(index,1)
-			count++
-		}
-	})
-	if (count === 0){
-		console.log('There is no such note')
-	}else{
-		saveNotes(notes)
-		console.log('The note is removed!')
-		console.log(notes)
+	const notes = loadNotes()
+	const notesToKeep = notes.filter(
+		note => note.title!== title
+	)
+	saveNotes(notesToKeep)
+		if (notes.length === notesToKeep.length){
+		console.log(chalk.red.inverse('There is no such a note'))
+	} else {
+		console.log(chalk.green.inverse('The note is removed!'))
 	}
 }
 
@@ -62,6 +57,6 @@ const loadNotes = () => {
 module.exports = {
 	getNotes: getNotes,
 	addNote: addNote,
-	removeNote: removeNote,
+	removeNote1: removeNote,
 	listing: listing
 };
